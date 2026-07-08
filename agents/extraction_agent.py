@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 class ExtractionAgent(BaseAgent):
     def __init__(self):
-        super().__init__(model_name = "poolside/laguna-xs-2.1:free")
+        super().__init__(model_name = "tencent/hy3:free")
         self.system_prompt = """
         Bạn là một Chuyên gia Phân tích Dữ liệu (Data Analyst).
         Nhiệm vụ của bạn là đọc các nội dung bài viết được cung cấp và rút trích ra các Tín hiệu thị trường (Market Signals).

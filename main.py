@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger(__name__)
 
 def main():
-    topic = "Phân tích xu hướng phát triển của Trí tuệ Nhân tạo (AI) trong lĩnh vực y tế năm 2026"
+    topic = "AI y tế"
     logger.info(f"BẮT ĐẦU CHẠY PIPELINE NGHIÊN CỨU: {topic}")
 
     # Khởi tạo các Agents

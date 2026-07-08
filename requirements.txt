@@ -3,3 +3,6 @@ pydantic>=2.0.0      # Data validation và Structured Outputs
 python-dotenv        # Load biến môi trường từ file .env
 requests             # Gọi API HTTP
 tenacity             # (Best Practice) Thư viện cực xịn để xử lý Retry logic khi API lỗi
+duckduckgo-search    # Thư viện tìm kiếm web miễn phí
+beautifulsoup4       # Thư viện phân tích HTML
+markdownify          # Chuyển HTML sang Markdown
