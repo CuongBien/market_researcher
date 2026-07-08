@@ -55,3 +55,21 @@ class BaseAgent:
         except Exception as e:
             logger.error(f"Lỗi khi gọi LLM hoặc Parse JSON: {e}")
             raise e
+
+    @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
+    def get_text_response(self, system_prompt: str, user_prompt: str) -> str:
+        """Hàm dùng cho các Agent cần trả về văn bản thuần túy (Markdown/Text)"""
+        logger.info(f"Đang gọi OpenRouter API (Text Mode) với model: {self.model_name}")
+        try:
+            response = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                temperature=0.7 # Tăng tính sáng tạo (nhiệt độ) lên 0.7 để văn phong mềm mại hơn
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as e:
+            logger.error(f"Lỗi khi gọi LLM (Text Mode): {e}")
+            raise e
