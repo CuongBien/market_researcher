@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 class TrendAgent(BaseAgent):
     def __init__(self):
-        super().__init__(model_name="tencent/hy3:free")
+        super().__init__(model_name="poolside/laguna-xs-2.1:free")
         
         self.system_prompt = """
         Bạn là một Giám đốc Chiến lược (Chief Strategy Officer).

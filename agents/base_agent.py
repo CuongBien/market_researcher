@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class BaseAgent:
-    def __init__(self, model_name: str = "tencent/hy3:free"): 
+    def __init__(self, model_name: str = "poolside/laguna-xs-2.1:free"): 
         self.client = OpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=os.getenv("OPENROUTER_API_KEY"),
