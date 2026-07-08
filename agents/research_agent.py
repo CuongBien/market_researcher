@@ -24,8 +24,10 @@ class ResearchAgent(BaseAgent):
         # Tạo user_prompt.
         user_prompt = f"Chủ đề nghiên cứu: {topic}\nDanh sách URL thô thu thập được: {raw_urls}"
 
-        result = self.get_structured_response(system_prompt = self.system_prompt, user_prompt = user_prompt, response_format = ResearchResult)
-        
-        # Bước 4: Return kết quả
+        # Gọi LLM (self.get_structured_response) với response_format=ExtractionResult
+        result = self.get_structured_response(
+            system_prompt = self.system_prompt, 
+            user_prompt = user_prompt, 
+            response_format = ResearchResult)
         return result
 
