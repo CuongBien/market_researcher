@@ -1,0 +1,5 @@
+openai>=1.14.0       # OpenAI SDK mới nhất
+pydantic>=2.0.0      # Data validation và Structured Outputs
+python-dotenv        # Load biến môi trường từ file .env
+requests             # Gọi API HTTP
+tenacity             # (Best Practice) Thư viện cực xịn để xử lý Retry logic khi API lỗi
